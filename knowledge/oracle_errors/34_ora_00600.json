@@ -1,0 +1,5 @@
+{
+    "title":"ORA-00600 Internal Oracle Error",
+    "category":"Oracle Error",
+    "content":"ORA-00600 is an internal Oracle error. Collect incident trace files using ADR. Check Oracle support notes and patches. Avoid restarting before collecting diagnostic information."
+    }

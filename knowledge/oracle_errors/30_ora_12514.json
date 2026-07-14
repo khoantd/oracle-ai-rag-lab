@@ -1,0 +1,5 @@
+{
+    "title":"ORA-12514 Listener Service Unknown",
+    "category":"Oracle Error",
+    "content":"ORA-12514 occurs when listener does not know requested database service. Diagnosis: Check listener status and registered services. Solution: Verify SERVICE_NAME, listener configuration and database registration."
+    }

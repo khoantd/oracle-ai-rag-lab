@@ -1,0 +1,5 @@
+{
+    "title":"Oracle Wait Event Troubleshooting",
+    "category":"Oracle Monitoring",
+    "content":"Wait events show where database sessions spend time waiting. Common waits include db file sequential read, db file scattered read, log file sync and enq locks. Analyze waits together with SQL and system metrics."
+    }

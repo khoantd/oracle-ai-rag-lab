@@ -1,0 +1,5 @@
+{
+    "title":"Merge Join Optimization",
+    "category":"Execution Plan",
+    "content":"Merge Join requires sorted inputs and is effective for large datasets. Performance problems occur when large sort operations consume TEMP space. Diagnosis: Check SORT operations in execution plan. Solution: Add appropriate indexes, improve statistics or consider Hash Join."
+    }

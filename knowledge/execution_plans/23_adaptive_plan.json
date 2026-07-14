@@ -1,0 +1,5 @@
+{
+    "title":"Oracle Adaptive Execution Plan",
+    "category":"Execution Plan",
+    "content":"Oracle Adaptive Plans allow the optimizer to change decisions during execution based on actual statistics. Useful for handling inaccurate estimates. Monitor adaptive behavior using DBMS_XPLAN with ALLSTATS LAST."
+    }

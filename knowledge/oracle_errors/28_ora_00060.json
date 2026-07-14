@@ -1,0 +1,5 @@
+{
+    "title":"ORA-00060 Deadlock Detected",
+    "category":"Oracle Error",
+    "content":"ORA-00060 happens when two sessions block each other waiting for locks. Diagnosis: Check trace file and blocking sessions. Solution: Review application transaction order and reduce lock duration."
+    }

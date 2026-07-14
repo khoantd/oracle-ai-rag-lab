@@ -1,0 +1,5 @@
+{
+    "title":"Frequent Redo Log Switch",
+    "category":"Database Administration",
+    "content":"Frequent redo log switches indicate redo logs are too small or workload generates high redo volume. Symptoms include log file switch waits. Diagnosis: Check V$LOG_HISTORY and AWR reports. Solution: Increase redo log size and optimize transaction workload."
+    }

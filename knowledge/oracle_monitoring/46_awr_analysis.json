@@ -1,0 +1,5 @@
+{
+    "title":"Oracle AWR Performance Analysis",
+    "category":"Oracle Monitoring",
+    "content":"Automatic Workload Repository collects database performance statistics. DBA uses AWR reports to analyze DB Time, Top SQL, wait events, CPU usage and IO performance. Workflow: Identify bottleneck, analyze SQL, check waits and apply tuning."
+    }

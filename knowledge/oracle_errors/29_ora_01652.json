@@ -1,0 +1,5 @@
+{
+    "title":"ORA-01652 Unable To Extend Temp Segment",
+    "category":"Oracle Error",
+    "content":"ORA-01652 occurs when TEMP tablespace cannot allocate additional space. Causes: Large sort, hash join or insufficient TEMP files. Solution: Add TEMP files and tune SQL consuming TEMP."
+    }

@@ -1,0 +1,5 @@
+{
+    "title":"Oracle Listener Configuration Troubleshooting",
+    "category":"Database Administration",
+    "content":"Oracle Listener provides network connectivity between clients and databases. Problems occur because of incorrect listener configuration or service registration issues. Diagnosis: Use lsnrctl status and check listener.ora. Solution: Restart listener, verify service_name and configure LOCAL_LISTENER correctly."
+    }

@@ -1,0 +1,5 @@
+{
+    "title":"ASM Disk Group Problem",
+    "category":"Database Administration",
+    "content":"ASM manages Oracle database storage using disk groups. Problems include disk offline, rebalance activity or insufficient free space. Diagnosis: Check V$ASM_DISK, V$ASM_DISKGROUP and ASM alert log. Solution: Repair failed disks, add storage capacity and monitor rebalance operations."
+    }

@@ -1,0 +1,5 @@
+{
+    "title":"Unexpected Full Table Scan",
+    "category":"SQL Performance",
+    "content":"Full table scan is inefficient when accessing a small number of rows from a large table. Causes include missing indexes, stale statistics, low selectivity predicates. Check optimizer statistics and execution plan before creating indexes."
+    }

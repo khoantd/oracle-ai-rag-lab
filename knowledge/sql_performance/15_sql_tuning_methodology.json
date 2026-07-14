@@ -1,0 +1,5 @@
+{
+    "title":"Oracle SQL Tuning Methodology",
+    "category":"SQL Performance",
+    "content":"SQL tuning process: Identify expensive SQL from AWR or V$SQL, check execution plan, analyze wait events, review statistics, apply changes and measure improvement."
+    }

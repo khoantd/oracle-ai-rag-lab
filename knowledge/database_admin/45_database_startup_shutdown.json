@@ -1,0 +1,5 @@
+{
+    "title":"Oracle Database Startup and Shutdown",
+    "category":"Database Administration",
+    "content":"Oracle database lifecycle includes startup and shutdown operations. Startup modes include NOMOUNT, MOUNT and OPEN. Shutdown modes include NORMAL, IMMEDIATE and ABORT. Always review alert log when startup or shutdown problems occur."
+    }

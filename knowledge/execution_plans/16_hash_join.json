@@ -1,0 +1,5 @@
+{
+    "title":"Hash Join Performance Issue",
+    "category":"Execution Plan",
+    "content":"Hash Join is commonly used when joining large tables. Problem occurs when hash area exceeds memory and spills to TEMP. Symptoms: High TEMP usage, long execution time. Diagnosis: Check DBMS_XPLAN.DISPLAY_CURSOR and SQL Monitor. Solution: Improve join predicates, gather statistics, adjust PGA memory or indexes depending on workload."
+    }

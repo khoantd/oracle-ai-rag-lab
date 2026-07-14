@@ -1,0 +1,5 @@
+{
+    "title":"ORA-04031 Shared Pool Memory Error",
+    "category":"Oracle Error",
+    "content":"ORA-04031 occurs when Oracle cannot allocate memory from shared pool. Causes: Fragmentation, insufficient SGA memory, excessive parsing. Solution: Increase shared pool size, use bind variables and analyze memory usage."
+    }

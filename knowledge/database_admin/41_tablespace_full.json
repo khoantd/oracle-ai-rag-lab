@@ -1,0 +1,5 @@
+{
+    "title":"Tablespace Full Problem",
+    "category":"Database Administration",
+    "content":"Tablespace full occurs when datafiles cannot allocate additional space. Symptoms include ORA-01653 errors. Diagnosis: Check DBA_DATA_FILES and DBA_FREE_SPACE. Solution: Resize datafiles, add new datafiles or enable AUTOEXTEND carefully."
+    }

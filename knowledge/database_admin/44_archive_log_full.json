@@ -1,0 +1,5 @@
+{
+    "title":"Archive Log Destination Full",
+    "category":"Database Administration",
+    "content":"Archive log destination full can stop database operations because Oracle cannot archive redo logs. Diagnosis: Check V$ARCHIVE_DEST and filesystem usage. Solution: Free storage space, increase archive destination capacity or configure proper backup cleanup."
+    }

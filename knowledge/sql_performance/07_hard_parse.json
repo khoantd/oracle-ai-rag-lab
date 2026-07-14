@@ -1,0 +1,5 @@
+{
+    "title":"Excessive Hard Parsing",
+    "category":"SQL Performance",
+    "content":"High hard parse consumes CPU and library cache resources. Causes include literals instead of bind variables. Solution: Use bind variables and monitor V$SQLAREA."
+    }

@@ -1,0 +1,5 @@
+{
+    "title":"High Buffer Gets SQL Tuning",
+    "category":"SQL Performance",
+    "content":"Problem: SQL consumes excessive logical reads. Causes: Missing index, inefficient join, selecting unnecessary columns, poor predicates. Diagnosis: Check V$SQL BUFFER_GETS. Solution: Tune SQL statement, create indexes, rewrite query and verify execution plan."
+    }

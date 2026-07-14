@@ -1,0 +1,5 @@
+{
+    "title":"ORA-01555 Snapshot Too Old",
+    "category":"Oracle Error",
+    "content":"ORA-01555 occurs when Oracle cannot provide a consistent read because required undo information has been overwritten. Causes: Long running queries, insufficient UNDO retention. Solution: Increase UNDO tablespace, tune SQL and reduce transaction duration."
+    }

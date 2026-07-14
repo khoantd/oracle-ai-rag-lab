@@ -1,0 +1,5 @@
+{
+    "title":"ORA-27037 Unable To Obtain File Status",
+    "category":"Oracle Error",
+    "content":"ORA-27037 is an operating system file access error. Causes include missing files, incorrect permissions or storage issues. Check filesystem availability and Oracle owner permissions."
+    }

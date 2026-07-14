@@ -1,0 +1,5 @@
+{
+    "title":"Oracle UNDO Management",
+    "category":"Database Administration",
+    "content":"UNDO stores previous versions of data for transaction rollback and consistent reads. Problems include ORA-01555 snapshot too old and excessive undo usage. Diagnosis: Check V$UNDOSTAT and UNDO tablespace usage. Solution: Adjust undo retention and tune long-running SQL."
+    }

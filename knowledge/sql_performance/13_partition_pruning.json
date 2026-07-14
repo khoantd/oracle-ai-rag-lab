@@ -1,0 +1,5 @@
+{
+    "title":"Partition Pruning Not Working",
+    "category":"SQL Performance",
+    "content":"Partitioned tables require proper predicates to eliminate unnecessary partitions. Missing partition key filters can cause excessive IO."
+    }

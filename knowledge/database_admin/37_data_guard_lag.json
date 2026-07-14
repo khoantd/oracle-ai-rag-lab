@@ -1,0 +1,5 @@
+{
+    "title":"Data Guard Apply Lag Problem",
+    "category":"Database Administration",
+    "content":"Data Guard lag occurs when standby database cannot apply redo fast enough. Symptoms: High transport lag or apply lag. Diagnosis: Check V$DATAGUARD_STATS, V$ARCHIVE_DEST_STATUS and standby alert log. Solution: Check network latency, standby performance, redo generation rate and managed recovery process."
+    }

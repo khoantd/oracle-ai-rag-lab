@@ -1,0 +1,5 @@
+{
+    "title":"Parallel Query Performance",
+    "category":"Execution Plan",
+    "content":"Parallel Query improves performance for large data processing workloads. Excessive parallelism can consume CPU and reduce system throughput. Check execution plan PX operators and configure appropriate parallel degree."
+    }

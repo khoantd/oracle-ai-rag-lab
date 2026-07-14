@@ -1,0 +1,5 @@
+{
+    "title":"ORA-01017 Invalid Username Password",
+    "category":"Oracle Error",
+    "content":"ORA-01017 indicates authentication failure. Causes include wrong password, expired account or incorrect authentication method. Check user status and password configuration."
+    }

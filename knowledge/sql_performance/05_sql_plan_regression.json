@@ -1,0 +1,5 @@
+{
+    "title":"SQL Plan Regression After Database Change",
+    "category":"SQL Performance",
+    "content":"SQL performance may degrade after upgrade or statistics refresh because optimizer chooses a different execution plan. Solution: Compare old and new plans. Use SQL Plan Baseline when necessary."
+    }

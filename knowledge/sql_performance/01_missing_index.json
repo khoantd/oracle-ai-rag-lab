@@ -1,0 +1,5 @@
+{
+    "title":"Missing Index Causes Full Table Scan",
+    "category":"SQL Performance",
+    "content":"Problem: SQL performs full table scan on a large table. Symptoms: High logical reads, high buffer gets, long execution time. Diagnosis: Check execution plan using DBMS_XPLAN.DISPLAY_CURSOR. Solution: Create suitable index based on WHERE clause and join predicates. Validate improvement using SQL monitoring."
+}

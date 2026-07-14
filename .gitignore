@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# PostgreSQL
+*.db
+
+# Ollama cache
+models/
+
+# Windows
+Thumbs.db
+Desktop.ini

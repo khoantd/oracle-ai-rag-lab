@@ -1,0 +1,5 @@
+{
+    "title":"Index Range Scan Optimization",
+    "category":"Execution Plan",
+    "content":"Index Range Scan retrieves multiple rows using an index. It is efficient when predicates have good selectivity. Problems occur when too many rows are returned. Check clustering factor and table access operations. Solution: Review index design and SQL predicates."
+    }

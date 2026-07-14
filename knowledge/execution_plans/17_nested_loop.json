@@ -1,0 +1,5 @@
+{
+    "title":"Nested Loop Join Performance Problem",
+    "category":"Execution Plan",
+    "content":"Nested Loop is efficient when driving table returns few rows. Problem occurs when optimizer chooses Nested Loop for large datasets. Symptoms: Many buffer gets and slow execution. Diagnosis: Review execution plan and cardinality estimates. Solution: Correct statistics, use proper indexes or allow optimizer to choose Hash Join."
+    }

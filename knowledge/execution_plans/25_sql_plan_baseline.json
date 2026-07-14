@@ -1,0 +1,5 @@
+{
+    "title":"SQL Plan Baseline Management",
+    "category":"Execution Plan",
+    "content":"SQL Plan Baseline prevents SQL performance regression by preserving known good execution plans. Use when optimizer chooses inefficient plans after upgrades or statistics changes. Manage using DBMS_SPM package."
+    }

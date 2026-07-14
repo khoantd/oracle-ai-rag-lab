@@ -1,0 +1,5 @@
+{
+    "title":"Bind Variable Performance Issue",
+    "category":"SQL Performance",
+    "content":"Bind variables improve cursor sharing but may cause suboptimal plans when data distribution is skewed. Use Adaptive Cursor Sharing to handle different selectivity patterns."
+    }

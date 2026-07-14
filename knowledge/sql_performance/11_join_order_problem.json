@@ -1,0 +1,5 @@
+{
+    "title":"Wrong Join Order",
+    "category":"SQL Performance",
+    "content":"Incorrect join order increases SQL execution time. Review optimizer plan, table cardinality and statistics."
+    }

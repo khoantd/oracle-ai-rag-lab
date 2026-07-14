@@ -1,0 +1,5 @@
+{
+    "title":"TABLE ACCESS FULL Operation",
+    "category":"Execution Plan",
+    "content":"TABLE ACCESS FULL means Oracle scans all rows in a table. It can be efficient for small tables or large percentage retrieval. Problem occurs when only few rows are needed from large tables. Check indexes, predicates and optimizer statistics."
+    }

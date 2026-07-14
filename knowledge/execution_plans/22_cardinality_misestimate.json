@@ -1,0 +1,5 @@
+{
+    "title":"Optimizer Cardinality Misestimate",
+    "category":"Execution Plan",
+    "content":"Cardinality represents estimated rows returned by each operation. Wrong estimates cause poor join methods and bad execution plans. Causes include stale statistics, missing histograms or data skew. Solution: Gather statistics and create appropriate histograms."
+    }

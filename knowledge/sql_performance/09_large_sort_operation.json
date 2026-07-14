@@ -1,0 +1,5 @@
+{
+    "title":"Large Sort Operation",
+    "category":"SQL Performance",
+    "content":"Large ORDER BY or GROUP BY operations may spill to TEMP tablespace. Check V$SQL_WORKAREA and increase PGA or optimize SQL."
+    }

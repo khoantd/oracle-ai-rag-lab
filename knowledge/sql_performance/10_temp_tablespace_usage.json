@@ -1,0 +1,6 @@
+{
+    "title":"High TEMP Tablespace Usage",
+    "category":"SQL Performance",
+    "content":"TEMP usage increases because of hash joins, sorts or large aggregations. Monitor V$TEMPSEG_USAGE and tune SQL operations."
+    }
+    

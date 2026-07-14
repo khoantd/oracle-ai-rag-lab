@@ -1,0 +1,5 @@
+{
+    "title":"SQL Consuming High CPU",
+    "category":"SQL Performance",
+    "content":"High CPU SQL can be caused by inefficient joins, missing indexes, functions on columns and large sorts. Analyze SQL Monitor, execution plan and AWR reports."
+    }

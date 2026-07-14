@@ -1,0 +1,5 @@
+{
+    "title":"Oracle RAC Cache Fusion Performance Issue",
+    "category":"Database Administration",
+    "content":"In Oracle RAC, Cache Fusion transfers blocks between instances through the interconnect. Excessive block transfers cause gc buffer busy waits and cluster performance issues. Diagnosis: Review AWR RAC statistics and Global Cache waits. Solution: Optimize SQL access patterns, partition workload and improve interconnect performance."
+    }

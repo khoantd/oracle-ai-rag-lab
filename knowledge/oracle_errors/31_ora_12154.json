@@ -1,0 +1,5 @@
+{
+    "title":"ORA-12154 TNS Could Not Resolve Identifier",
+    "category":"Oracle Error",
+    "content":"ORA-12154 occurs when Oracle cannot resolve connect identifier. Causes: Incorrect TNS alias or sqlnet configuration. Solution: Verify tnsnames.ora and Oracle Net configuration."
+    }

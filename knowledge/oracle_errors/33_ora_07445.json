@@ -1,0 +1,5 @@
+{
+    "title":"ORA-07445 Exception Error",
+    "category":"Oracle Error",
+    "content":"ORA-07445 indicates an unexpected operating system exception inside Oracle code. Collect alert log and trace files. Check Oracle patches and known bugs."
+    }

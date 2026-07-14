@@ -1,0 +1,5 @@
+{
+    "title":"Function Applied On Indexed Column",
+    "category":"SQL Performance",
+    "content":"Using functions on indexed columns may prevent index usage. Example WHERE UPPER(NAME)='JOHN'. Consider function-based indexes."
+    }

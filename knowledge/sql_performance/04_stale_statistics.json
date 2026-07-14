@@ -1,0 +1,5 @@
+{
+    "title":"Stale Optimizer Statistics",
+    "category":"SQL Performance",
+    "content":"Oracle optimizer depends on statistics to generate execution plans. Stale statistics may cause wrong cardinality estimation and inefficient plans. Solution: Execute DBMS_STATS.GATHER_TABLE_STATS and verify plan changes."
+    }

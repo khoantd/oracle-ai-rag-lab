@@ -1,0 +1,5 @@
+{
+    "title":"RMAN Backup Failure Troubleshooting",
+    "category":"Database Administration",
+    "content":"RMAN backup failures can occur because of insufficient disk space, invalid backup destination, missing permissions or corrupted datafiles. Diagnosis: Check RMAN logs, alert log and V$RMAN_BACKUP_JOB_DETAILS. Solution: Verify storage availability, configure retention policy and validate backup pieces."
+    }

@@ -1,0 +1,5 @@
+{
+    "title":"Index Full Scan Issue",
+    "category":"Execution Plan",
+    "content":"Index Full Scan reads all entries in an index. It may be selected for ORDER BY operations or when index contains required columns. Excessive usage may indicate inefficient SQL. Analyze execution plan and indexing strategy."
+    }
