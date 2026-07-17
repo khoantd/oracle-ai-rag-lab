@@ -34,4 +34,11 @@ models/
 # Windows
 Thumbs.db
 Desktop.ini
+
+# AI agent tooling (Cursor, Claude Code, Kiro, Antigravity)
+.agent/
+.agents/
+.claude/
+.cursor/
+.kiro/
 .codegraph/
