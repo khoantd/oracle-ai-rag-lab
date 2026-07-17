@@ -222,6 +222,64 @@ oracle-rag-chat
 4. Send context and question to the LLM.
 5. Generate the Oracle DBA answer.
 
-# 16. License
+# 16. Release Notes
+
+## 0.1.0 — Open-source package refactor
+
+First packaged release of the Oracle DBA RAG lab. The numbered `python/` scripts are replaced by an installable library and CLIs; the step-by-step lab flow is unchanged.
+
+### Why these changes
+
+The original layout was a tutorial of standalone scripts: credentials lived in source, vector-search SQL was copied between files, and there was no installable package, automated tests, or contributor guide. That works for a private lab, but it blocks safe sharing and makes pull requests hard to review.
+
+This release reorganizes the same RAG learning path into a small library with thin CLIs so the lab stays teachable while meeting common open-source expectations (config via env, one place for SQL, tests, license, contributing docs).
+
+### Benefits
+
+| Change | Benefit |
+|--------|---------|
+| Installable `oracle-ai-rag` package | Contributors run `pip install -e .` from any directory; no CWD/`PYTHONPATH` hacks |
+| Shared repository + RAG modules | One vector-search path for search and chat — fewer bugs when you improve retrieval |
+| Env-based Settings (`.env.example`) | Secrets stay out of git; each machine/VM can use its own DB without editing code |
+| Explicit `--replace` / `--no-replace` on load | Destructive wipe is visible and documented; safer for shared databases |
+| `sql/schema.sql` in-repo | Newcomers can create the pgvector schema without scavenging SQL from README alone |
+| Tests + ruff + CI | Changes can be verified offline before touching a live Postgres/Ollama stack |
+| MIT + `CONTRIBUTING.md` | Clear license and PR checklist so forks and contributions have a known contract |
+| Thin CLI adapters | Lab steps stay simple (`oracle-rag-load` …) while logic lives in testable modules |
+
+### Added
+
+- Installable package `oracle-ai-rag` (`src/oracle_ai_rag/`) via `pip install -e .`
+- Console commands: `oracle-rag-load`, `oracle-rag-search`, `oracle-rag-chat`
+- Env-based configuration (`.env.example`) — no database secrets in source
+- Shared modules: Settings, repository (vector search SQL), embeddings, RAG pipeline, knowledge loader
+- `sql/schema.sql` for pgvector table + HNSW index
+- Unit tests (`pytest`), lint (`ruff`), and GitHub Actions CI
+- MIT `LICENSE` and `CONTRIBUTING.md`
+
+### Changed
+
+- Project layout moved from flat lab scripts to `src/` package + thin CLI adapters
+- README lab steps now use the new CLI entry points
+- Load wipe behavior is explicit (`oracle-rag-load --replace` by default; `--no-replace` to skip)
+
+### Removed
+
+- Legacy `python/` scripts (`01_load_…`, `02_vector_search_…`, `03_rag_chatbot`, `db.py`, smoke scripts)
+- Hardcoded PostgreSQL host/user/password from source
+
+### Migration (from pre-0.1.0 scripts)
+
+```bash
+pip install -e .
+cp .env.example .env   # set PGHOST, PGUSER, PGPASSWORD, etc.
+
+# Old                              New
+# python 01_load_….py           →  oracle-rag-load
+# python 02_vector_search_….py  →  oracle-rag-search
+# python 03_rag_chatbot.py      →  oracle-rag-chat
+```
+
+# 17. License
 
 MIT — see [LICENSE](LICENSE).
