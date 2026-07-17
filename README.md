@@ -79,42 +79,49 @@ The goal is to allow an AI assistant to answer Oracle Database troubleshooting q
 | Component | Technology |
 |---|---|
 | Database | PostgreSQL 16 |
-| Vector Extension | pgvector 0.8.5 |
+| Vector Extension | pgvector |
 | Embedding Model | all-MiniLM-L6-v2 |
 | LLM | Ollama Qwen2.5/Qwen3 |
-| Language | Python 3 |
-| Framework | Custom RAG Pipeline |
+| Language | Python 3.10+ |
+| Packaging | `oracle-ai-rag` (`pip install -e .`) |
 
 # 5. Environment Architecture
 
 ```text
-Windows Host
+Developer Machine
 +-----------------------------+
-| Python RAG Application      |
+| Python RAG package (CLI)    |
 | Ollama Qwen Model           |
 +-------------+---------------+
               |
            Network
               |
-Oracle Linux VM
+PostgreSQL host
 +-----------------------------+
-| PostgreSQL 16              |
-| pgvector                   |
-| oracle_ai database         |
-+----------------------------+
+| PostgreSQL 16               |
+| pgvector                    |
+| oracle_ai database          |
++-----------------------------+
 ```
 
 # 6. Project Structure
 
 ```text
 oracle-ai-rag-lab/
-├── knowledge/
-├── python/
+├── knowledge/                 # Oracle DBA JSON knowledge base
+├── src/oracle_ai_rag/         # Installable package
+│   ├── config.py
 │   ├── db.py
-│   ├── 01_load_oracle_dba_knowledge.py
-│   ├── 02_vector_search_test.py
-│   └── 03_rag_chatbot.py
-├── requirements.txt
+│   ├── embeddings.py
+│   ├── knowledge.py
+│   ├── repository.py
+│   ├── rag.py
+│   └── cli/                   # load / search / chat
+├── sql/schema.sql             # pgvector table + HNSW index
+├── tests/
+├── pyproject.toml
+├── .env.example
+├── CONTRIBUTING.md
 └── README.md
 ```
 
@@ -126,67 +133,74 @@ oracle-ai-rag-lab/
 - Database Administration (10)
 - Monitoring (5)
 
-# 8. Database Setup
+# 8. Quick start for contributors
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+cp .env.example .env
+# Edit .env with your PostgreSQL credentials (never commit .env)
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for PR guidelines and tests.
+
+# 9. Database Setup
 
 ```sql
 CREATE DATABASE oracle_ai;
 ```
 
-```sql
-CREATE EXTENSION vector;
+Then apply the checked-in schema:
+
+```bash
+psql -h "$PGHOST" -U "$PGUSER" -d "$PGDATABASE" -f sql/schema.sql
 ```
 
-# 9. Create Vector Table
+Or run the SQL manually:
 
 ```sql
-CREATE TABLE oracle_docs (
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE IF NOT EXISTS oracle_docs (
     id SERIAL PRIMARY KEY,
     title TEXT,
     category TEXT,
     content TEXT,
     embedding VECTOR(384)
 );
-```
 
-# 10. Create HNSW Index
-
-```sql
-CREATE INDEX oracle_docs_embedding_hnsw
+CREATE INDEX IF NOT EXISTS oracle_docs_embedding_hnsw
 ON oracle_docs
 USING hnsw (embedding vector_cosine_ops);
 ```
 
-# 11. Python Environment
+# 10. Python Environment
 
 ```bash
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+source .venv/bin/activate          # Windows: .\.venv\Scripts\Activate.ps1
+pip install -e .
+cp .env.example .env
 ```
 
-requirements.txt
+Required env vars (see `.env.example`): `PGHOST`, `PGPORT`, `PGDATABASE`, `PGUSER`, `PGPASSWORD`.
 
-```text
-sentence-transformers
-psycopg2-binary
-numpy
-openai
-```
-
-# 12. Load Knowledge
+# 11. Load Knowledge
 
 ```bash
-cd python
-python 01_load_oracle_dba_knowledge.py
+oracle-rag-load
 ```
 
-# 13. Test Vector Search
+By default this **replaces** all rows in `oracle_docs`. Use `oracle-rag-load --no-replace` to skip the wipe.
+
+# 12. Test Vector Search
 
 ```bash
-python 02_vector_search_test.py
+oracle-rag-search
 ```
 
-# 14. Start Ollama
+# 13. Start Ollama
 
 ```bash
 ollama list
@@ -194,16 +208,20 @@ ollama pull qwen2.5:7b
 ollama serve
 ```
 
-# 15. Run RAG Chatbot
+# 14. Run RAG Chatbot
 
 ```bash
-python 03_rag_chatbot.py
+oracle-rag-chat
 ```
 
-# 16. RAG Flow Explanation
+# 15. RAG Flow Explanation
 
 1. Create question embedding.
 2. Search similar vectors in pgvector.
 3. Build context from retrieved documents.
 4. Send context and question to the LLM.
 5. Generate the Oracle DBA answer.
+
+# 16. License
+
+MIT — see [LICENSE](LICENSE).

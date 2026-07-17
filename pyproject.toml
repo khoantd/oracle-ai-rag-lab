@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oracle-ai-rag"
+version = "0.1.0"
+description = "Oracle DBA RAG lab: pgvector retrieval + Ollama generation"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Oracle AI RAG Lab Contributors" }]
+keywords = ["oracle", "dba", "rag", "pgvector", "ollama"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+]
+dependencies = [
+    "sentence-transformers>=3.0.0",
+    "psycopg2-binary>=2.9.9",
+    "numpy>=1.26.0",
+    "openai>=1.40.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+[project.scripts]
+oracle-rag-load = "oracle_ai_rag.cli.load:main"
+oracle-rag-search = "oracle_ai_rag.cli.search:main"
+oracle-rag-chat = "oracle_ai_rag.cli.chat:main"
+
+[project.urls]
+Repository = "https://github.com/example/oracle-ai-rag-lab"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: tests that need a live PostgreSQL + pgvector database",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

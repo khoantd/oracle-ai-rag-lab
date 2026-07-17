@@ -1,6 +1,13 @@
 # Python
 __pycache__/
 *.pyc
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
 
 # Virtual Environment
 .venv/
@@ -27,3 +34,4 @@ models/
 # Windows
 Thumbs.db
 Desktop.ini
+.codegraph/

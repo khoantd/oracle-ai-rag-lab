@@ -1,4 +1,5 @@
-sentence-transformers
-psycopg2-binary
-numpy
-openai
+# Install the package in editable mode (see pyproject.toml for dependencies).
+-e .
+
+# For development (tests + lint):
+# pip install -e ".[dev]"
